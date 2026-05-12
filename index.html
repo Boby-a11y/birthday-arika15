@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Dear Aru 🐼💙</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Quicksand',sans-serif;
+background:linear-gradient(180deg,#e7f6ff,#d5eeff,#c7e5ff,#d7d4ff);
+overflow-x:hidden;
+color:#294861;
+position:relative;
+}
+
+/* dreamy glow */
+
+body::before{
+content:'';
+position:fixed;
+width:500px;
+height:500px;
+background:#9ad8ff;
+filter:blur(150px);
+top:-150px;
+right:-100px;
+opacity:0.5;
+z-index:-2;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:450px;
+height:450px;
+background:#c8bbff;
+filter:blur(150px);
+bottom:-120px;
+left:-120px;
+opacity:0.45;
+z-index:-2;
+}
+
+/* clouds */
+
+.cloud{
+position:fixed;
+font-size:80px;
+opacity:0.3;
+animation:cloudMove 45s linear infinite;
+z-index:-1;
+}
+
+@keyframes cloudMove{
+0%{
+transform:translateX(-250px);
+}
+100%{
+transform:translateX(120vw);
+}
+}
+
+/* sparkles */
+
+.sparkle{
+position:fixed;
+font-size:18px;
+animation:sparkle 4s infinite ease-in-out;
+z-index:0;
+color:#7cc7ff;
+}
+
+@keyframes sparkle{
+0%,100%{
+transform:scale(0.7);
+opacity:0.4;
+}
+50%{
+transform:scale(1.4);
+opacity:1;
+}
+}
+
+/* floating items */
+
+.float{
+position:fixed;
+font-size:35px;
+animation:float 6s ease-in-out infinite;
+z-index:1;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-18px);
+}
+}
+
+/* hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:25px;
+position:relative;
+z-index:2;
+}
+
+.hero-box{
+width:100%;
+max-width:1000px;
+padding:65px;
+border-radius:45px;
+background:rgba(255,255,255,0.45);
+backdrop-filter:blur(18px);
+box-shadow:0 20px 55px rgba(0,0,0,0.12);
+border:2px solid rgba(255,255,255,0.5);
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.small{
+letter-spacing:4px;
+font-size:0.95rem;
+font-weight:700;
+color:#6992b4;
+margin-bottom:18px;
+}
+
+.title{
+font-family:'Pacifico',cursive;
+font-size:5rem;
+line-height:1.2;
+color:#3d688d;
+}
+
+.title span{
+color:#72b5e8;
+}
+
+.subtitle{
+margin-top:25px;
+font-size:1.1rem;
+line-height:2;
+color:#496883;
+max-width:720px;
+margin-inline:auto;
+}
+
+/* panda image */
+
+.main-panda{
+width:220px;
+margin-top:35px;
+border-radius:30px;
+box-shadow:0 15px 35px rgba(0,0,0,0.12);
+transition:0.4s;
+}
+
+.main-panda:hover{
+transform:scale(1.05) rotate(-2deg);
+}
+
+/* button */
+
+.magic-btn{
+margin-top:40px;
+padding:18px 42px;
+border:none;
+border-radius:60px;
+background:linear-gradient(135deg,#7ecbff,#b79cff);
+color:white;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+box-shadow:0 15px 30px rgba(125,190,255,0.35);
+transition:0.35s;
+}
+
+.magic-btn:hover{
+transform:translateY(-5px) scale(1.04);
+}
+
+/* sections */
+
+.section{
+padding:120px 25px;
+display:flex;
+justify-content:center;
+position:relative;
+z-index:2;
+}
+
+.card{
+width:100%;
+max-width:980px;
+padding:55px;
+border-radius:40px;
+background:rgba(255,255,255,0.45);
+backdrop-filter:blur(18px);
+border:2px solid rgba(255,255,255,0.5);
+box-shadow:0 20px 55px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.card h2{
+font-family:'Pacifico',cursive;
+font-size:3rem;
+color:#54799a;
+}
+
+.divider{
+width:120px;
+height:5px;
+margin:25px auto;
+border-radius:20px;
+background:linear-gradient(to right,#7dc8ff,#c1a7ff);
+}
+
+.card p{
+font-size:1.08rem;
+line-height:2.1;
+color:#476681;
+margin-top:20px;
+}
+
+/* panda cute section */
+
+.panda-box{
+margin-top:35px;
+display:flex;
+justify-content:center;
+}
+
+.panda-box img{
+width:260px;
+border-radius:35px;
+box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+/* quote */
+
+.quote{
+font-family:'Pacifico',cursive;
+font-size:2.2rem;
+line-height:1.8;
+color:#5d82a5;
+}
+
+/* popup */
+
+.popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(8px);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:999;
+}
+
+.popup-box{
+width:100%;
+max-width:520px;
+padding:40px 30px;
+border-radius:35px;
+background:rgba(255,255,255,0.82);
+backdrop-filter:blur(20px);
+text-align:center;
+position:relative;
+animation:popupShow 0.4s ease;
+}
+
+@keyframes popupShow{
+from{
+transform:scale(0.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.popup-box img{
+width:150px;
+border-radius:25px;
+margin-bottom:15px;
+}
+
+.popup-box h2{
+font-family:'Pacifico',cursive;
+font-size:2.1rem;
+color:#557da0;
+}
+
+.popup-box p{
+margin-top:18px;
+line-height:2;
+color:#496883;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:1.5rem;
+cursor:pointer;
+}
+
+/* footer */
+
+footer{
+text-align:center;
+padding:40px;
+font-weight:700;
+color:#6185a5;
+}
+
+/* mobile */
+
+@media(max-width:768px){
+
+.hero-box{
+padding:38px 24px;
+}
+
+.title{
+font-size:3.2rem;
+}
+
+.subtitle{
+font-size:1rem;
+line-height:1.9;
+}
+
+.main-panda{
+width:180px;
+}
+
+.card{
+padding:32px 22px;
+}
+
+.card h2{
+font-size:2rem;
+}
+
+.card p{
+font-size:1rem;
+line-height:1.9;
+}
+
+.quote{
+font-size:1.6rem;
+}
+
+.panda-box img{
+width:200px;
+}
+
+.popup-box{
+padding:30px 22px;
+}
+
+.popup-box h2{
+font-size:1.7rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- clouds -->
+
+<div class="cloud" style="top:10%;left:-10%;">☁️</div>
+<div class="cloud" style="top:35%;left:-30%;animation-delay:10s;">☁️</div>
+<div class="cloud" style="top:70%;left:-20%;animation-delay:18s;">☁️</div>
+
+<!-- sparkles -->
+
+<div class="sparkle" style="top:15%;left:20%;">✦</div>
+<div class="sparkle" style="top:25%;right:18%;animation-delay:1s;">✧</div>
+<div class="sparkle" style="bottom:22%;left:12%;animation-delay:2s;">✦</div>
+<div class="sparkle" style="bottom:28%;right:18%;animation-delay:3s;">✧</div>
+
+<!-- floating -->
+
+<div class="float" style="top:12%;left:8%;">🐰</div>
+<div class="float" style="top:18%;right:10%;animation-delay:1s;">🐼</div>
+<div class="float" style="bottom:12%;left:10%;animation-delay:2s;">❄</div>
+<div class="float" style="bottom:10%;right:12%;animation-delay:3s;">🐰</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-box">
+
+<div class="small">
+15 MAY ✨ SPECIAL DAY
+</div>
+
+<h1 class="title">
+Happy Birthday<br>
+<span>My Dear Aru</span>
+</h1>
+
+<p class="subtitle">
+Some people slowly become special without even realising it…  
+and somehow, you became one of those people for me 💙
+<br><br>
+Today is about your smile, your softness and the happiness you bring ✨
+</p>
+
+<img class="main-panda" src="panda3.jpg"
+
+<br>
+
+<button class="magic-btn" onclick="openLetter()">
+🐼 Open Secret Letter
+</button>
+
+</div>
+
+</section>
+
+<!-- message -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>For Arika 💕</h2>
+
+<div class="divider"></div>
+
+<p>
+I may not have hundreds of pictures or videos with you,  
+but the little moments, conversations and memories still feel really precious 💌
+<br><br>
+You deserve peaceful nights, warm hugs, cute surprises and endless happiness (with me):3🤍
+<br><br>
+And on this 15 May,  
+I genuinely hope life treats you as softly as your heart treats others ✨
+<br><br>
+Keep smiling, keep shining and keep being your adorable self 🐼🐰
+</p>
+
+<div class="panda-box">
+<img src="panda2.jpg"
+</div>
+
+</div>
+
+</section>
+
+<!-- quote -->
+
+<section class="section">
+
+<div class="card">
+
+<div class="quote">
+“Some souls feel like comfort from the very beginning 🐼💙”
+</div>
+
+</div>
+
+</section>
+
+<!-- final -->
+
+<section class="section">
+
+<div class="card">
+
+<h2>One Last Thing ✨</h2>
+
+<div class="divider"></div>
+
+<p>
+No matter how much time passes,  
+I hope your smile never loses its softness 💙
+<br><br>
+May your life always stay filled with tiny happy moments, peaceful skies and warm hearts ☁️✨
+<br><br>
+Happy Birthday once again, My Dear Aru 🎂🎀
+</p>
+
+</div>
+
+</section>
+
+<footer>
+with love from ur bob 🐰💙
+</footer>
+
+<!-- popup -->
+
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<div class="close" onclick="closeLetter()">✕</div>
+
+<img src="panda4.png"
+
+<p>
+Maybe I don't always say it perfectly…  
+but you genuinely became someone really special to me 🐰
+<br><br>
+Your smile feels comforting,  
+your presence feels peaceful,  
+and talking to you somehow makes ordinary moments feel better ✨
+<br><br>
+So on this 15 May,  
+I just hope your heart stays happy, soft and loved — always 💙
+</p>
+
+</div>
+
+</div>
+
+<audio autoplay loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+
+function openLetter(){
+document.getElementById("popup").style.display="flex";
+}
+
+function closeLetter(){
+document.getElementById("popup").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
